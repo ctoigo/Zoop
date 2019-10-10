@@ -1,6 +1,6 @@
 <?php
 
-namespace Zoop;
+namespace ACSToigo;
 
 class ZoopBase {
 

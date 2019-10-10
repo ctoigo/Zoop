@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopSplitTransactions;
+use ACSToigo\Contracts\ZoopSplitTransactions;
 
 class ZoopSplitTransactions implements ZoopSplitTransactions {
 

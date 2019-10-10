@@ -1,6 +1,6 @@
 <?php
 
-namespace Zoop\Helpers;
+namespace ACSToigo\Helpers;
 
 trait ZoopHelpers {
 

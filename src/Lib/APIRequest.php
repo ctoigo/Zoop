@@ -1,9 +1,9 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\src\Exceptions\ZoopAuthenticationException;
-use Zoop\src\Exceptions\ZoopObjectNotFound;
+use ACSToigo\src\Exceptions\ZoopAuthenticationException;
+use ACSToigo\src\Exceptions\ZoopObjectNotFound;
 
 class APIRequest {
 

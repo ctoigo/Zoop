@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopInvoices;
+use ACSToigo\Contracts\ZoopInvoices;
 
 class ZoopInvoices implements ZoopInvoices {
 

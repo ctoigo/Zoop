@@ -1,6 +1,6 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
 class ZoopUtilities {
 

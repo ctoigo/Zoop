@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopSellers;
+use ACSToigo\Contracts\ZoopSellers;
 
 class ZoopSellers implements ZoopSellers {
 

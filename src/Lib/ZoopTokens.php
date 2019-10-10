@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopTokens;
+use ACSToigo\Contracts\ZoopTokens;
 
 class ZoopTokens implements ZoopTokens {
 

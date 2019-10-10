@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Contracts;
+namespace ACSToigo\Contracts;
 
-use Zoop\Lib\APIResource;
+use ACSToigo\Lib\APIResource;
 
 interface ZoopTokens {
 

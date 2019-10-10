@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopCards;
+use ACSToigo\Contracts\ZoopCards;
 
 class ZoopCards implements ZoopCards {
 

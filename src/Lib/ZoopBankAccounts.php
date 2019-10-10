@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopBankAccounts;
+use ACSToigo\Contracts\ZoopBankAccounts;
 
 class ZoopBankAccounts implements ZoopBankAccounts {
 

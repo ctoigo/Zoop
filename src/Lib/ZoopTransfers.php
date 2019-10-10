@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopTransfers;
+use ACSToigo\Contracts\ZoopTransfers;
 
 class ZoopTransfers implements ZoopTransfers {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Zoop\Exceptions;
+namespace ACSToigo\Exceptions;
 
 class ZoopObjectNotFound extends \Exception {
     

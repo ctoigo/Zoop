@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopChargesCNP;
+use ACSToigo\Contracts\ZoopChargesCNP;
 
 class ZoopChargesCNP implements ZoopChargesCNP {
 

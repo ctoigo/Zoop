@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopSubscriptions;
+use ACSToigo\Contracts\ZoopSubscriptions;
 
 class ZoopSubscriptions implements ZoopSubscriptions {
 

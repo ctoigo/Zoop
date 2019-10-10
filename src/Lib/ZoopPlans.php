@@ -1,8 +1,8 @@
 <?php
 
-namespace Zoop\Lib;
+namespace ACSToigo\Lib;
 
-use Zoop\Contracts\ZoopPlans;
+use ACSToigo\Contracts\ZoopPlans;
 
 class ZoopPlans implements ZoopPlans {
 
