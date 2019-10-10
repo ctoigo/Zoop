@@ -2,9 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Contracts\ZoopChargesCNP;
-
-class ZoopChargesCNP implements ZoopChargesCNP {
+class ZoopChargesCNP {
 
     /**
      * API Resource

@@ -2,9 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Contracts\ZoopCards;
-
-class ZoopCards implements ZoopCards {
+class ZoopCards {
 
     /**
      * API Resource

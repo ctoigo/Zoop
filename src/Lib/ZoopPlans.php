@@ -2,9 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Contracts\ZoopPlans;
-
-class ZoopPlans implements ZoopPlans {
+class ZoopPlans {
 
     /**
      * API Resource

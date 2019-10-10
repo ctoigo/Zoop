@@ -2,9 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Contracts\ZoopTransfers;
-
-class ZoopTransfers implements ZoopTransfers {
+class ZoopTransfers {
 
     /**
      * API Resource

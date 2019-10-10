@@ -2,9 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Contracts\ZoopTokens;
-
-class ZoopTokens implements ZoopTokens {
+class ZoopTokens {
 
     /**
      * API Resource

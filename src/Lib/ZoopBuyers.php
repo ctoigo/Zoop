@@ -2,9 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Contracts\ZoopBuyers;
-
-class ZoopBuyers implements ZoopBuyers {
+class ZoopBuyers {
 
     /**
      * API Resource

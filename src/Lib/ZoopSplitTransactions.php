@@ -2,9 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Contracts\ZoopSplitTransactions;
-
-class ZoopSplitTransactions implements ZoopSplitTransactions {
+class ZoopSplitTransactions {
 
     /**
      * API Resource

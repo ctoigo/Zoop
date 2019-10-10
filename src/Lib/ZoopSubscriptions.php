@@ -2,9 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Contracts\ZoopSubscriptions;
-
-class ZoopSubscriptions implements ZoopSubscriptions {
+class ZoopSubscriptions {
 
     /**
      * API Resource

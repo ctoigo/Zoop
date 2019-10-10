@@ -2,9 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Contracts\ZoopBankAccounts;
-
-class ZoopBankAccounts implements ZoopBankAccounts {
+class ZoopBankAccounts {
 
     /**
      * API Resource
