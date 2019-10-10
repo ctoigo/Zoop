@@ -2,9 +2,9 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\Exceptions\ZoopException;
 use ACSToigo\Helpers\ZoopHelpers;
 use ACSToigo\ZoopBase;
+use Exception;
 
 class APIResource {
 
@@ -67,7 +67,7 @@ class APIResource {
      *
      * @return mixed
      *
-     * @throws ZoopException
+     * @throws Exception
      */
     public function fileAPI($api, $files) {
         $url = $this->zoopBase->getUrl() . $this->zoopBase->getMarketplaceId() . '/' . $api;
@@ -78,24 +78,24 @@ class APIResource {
         ];
         try {
             if (is_array($files)) {
-                throw new ZoopException('Você só pode enviar um arquivo por solicitação! Matriz fornecida...');
+                throw new Exception('Você só pode enviar um arquivo por solicitação! Matriz fornecida...');
             } else {
                 if (filesize($files) > 250000)
-                    throw new ZoopException('Você só pode enviar arquivos com 250 kbytes de tamanho.');
+                    throw new Exception('Você só pode enviar arquivos com 250 kbytes de tamanho.');
 
                 if (!is_file($files))
-                    throw new ZoopException('Parece que este não é um arquivo...');
+                    throw new Exception('Parece que este não é um arquivo...');
 
                 if (!in_array(mime_content_type($files), $mimeTypes))
-                    throw new ZoopException('Você só pode enviar arquivos dos tipos "jpg, png, pdf"!');
+                    throw new Exception('Você só pode enviar arquivos dos tipos "jpg, png, pdf"!');
 
                 return $this->APIRequest->request('FILE', $url, $this->zoopBase->getHeaders(), [
                             'file' => new \CURLFile($files, '', uniqid()),
                             'category' => 'identification'
                 ]);
             }
-        } catch (ZoopException $e) {
-            throw new ZoopException($e->getMessage());
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
         }
     }
 
@@ -107,14 +107,14 @@ class APIResource {
      *
      * @return mixed
      *
-     * @throws ZoopException
+     * @throws Exception
      */
     public function createAPI($api, $attributes = []) {
         $url = $this->zoopBase->getUrl() . $this->zoopBase->getMarketplaceId() . '/' . $api;
         try {
             return $this->APIRequest->request('POST', $url, $this->zoopBase->getHeaders(), $attributes);
-        } catch (ZoopException $e) {
-            throw new ZoopException($e->getMessage());
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
         }
     }
 
@@ -125,14 +125,14 @@ class APIResource {
      *
      * @return mixed
      *
-     * @throws ZoopException
+     * @throws Exception
      */
     public function searchAPI($api) {
         $url = $this->zoopBase->getUrl() . $this->zoopBase->getMarketplaceId() . '/' . $api;
         try {
             return $this->APIRequest->request('GET', $url, $this->zoopBase->getHeaders());
-        } catch (ZoopException $e) {
-            throw new ZoopException($e->getMessage());
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
         }
     }
 
@@ -143,14 +143,14 @@ class APIResource {
      *
      * @return mixed
      *
-     * @throws ZoopException
+     * @throws Exception
      */
     public function deleteAPI($api) {
         $url = $this->zoopBase->getUrl() . $this->zoopBase->getMarketplaceId() . '/' . $api;
         try {
             return $this->APIRequest->request('DELETE', $url, $this->zoopBase->getHeaders());
-        } catch (ZoopException $e) {
-            throw new ZoopException($e->getMessage());
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
         }
     }
 
@@ -162,14 +162,14 @@ class APIResource {
      *
      * @return mixed
      *
-     * @throws ZoopException
+     * @throws Exception
      */
     public function updateAPI($api, $attributes = []) {
         $url = $this->zoopBase->getUrl() . $this->zoopBase->getMarketplaceId() . '/' . $api;
         try {
             return $this->APIRequest->request('PUT', $url, $this->zoopBase->getHeaders(), $attributes);
-        } catch (ZoopException $e) {
-            throw new ZoopException($e->getMessage());
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
         }
     }
 

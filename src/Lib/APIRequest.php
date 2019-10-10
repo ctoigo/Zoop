@@ -2,8 +2,7 @@
 
 namespace ACSToigo\Lib;
 
-use ACSToigo\src\Exceptions\ZoopAuthenticationException;
-use ACSToigo\src\Exceptions\ZoopObjectNotFound;
+use Exception;
 
 class APIRequest {
 
@@ -54,24 +53,25 @@ class APIRequest {
      *
      * @return mixed
      *
-     * @throws ZoopAuthenticationException
-     * @throws ZoopObjectNotFound
+     * @throws Exception
      */
     public function request($method, $url, $headers, $data = []) {
         global $zoop_last_api_response_code;
 
         if ($this->zoopBase->getMarketplaceId() == null) {
-            throw new ZoopAuthenticationException("ID do MarketPlace não configurado. Verifique seu arquivo de configuração em 'resources/config/config.php'");
+            throw new Exception("ID do MarketPlace não configurado. Verifique seu arquivo de configuração em 'resources/config/config.php'");
         }
 
         list($response_body, $response_code) = $this->requestWithCURL($method, $url, $headers, $data);
 
         $response = json_decode($response_body);
 
-        if (json_last_error() != JSON_ERROR_NONE)
-            throw new ZoopObjectNotFound($response_body);
-        if ($response_code == 404)
-            throw new ZoopObjectNotFound($response_body);
+        if (json_last_error() != JSON_ERROR_NONE) {
+            throw new Exception($response_body);
+        }
+        if ($response_code == 404) {
+            throw new Exception($response_body);
+        }
 
         if (isset($response->errors)) {
 
@@ -101,9 +101,9 @@ class APIRequest {
      *
      * @return array
      */
-    private function requestWithCURL($method, $url, $headers, $data = Array()) {
+    private function requestWithCURL($method, $url, $headers, $data = []) {
         $curl = curl_init();
-        $opts = Array();
+        $opts = [];
 
         if (strtolower($method) == 'file') {
             $opts[CURLOPT_POST] = 1;
@@ -115,8 +115,9 @@ class APIRequest {
             $opts[CURLOPT_POSTFIELDS] = http_build_query($data);
         }
 
-        if (strtolower($method) == "delete")
+        if (strtolower($method) == "delete") {
             $opts[CURLOPT_CUSTOMREQUEST] = 'DELETE';
+        }
 
         if (strtolower($method) == "put") {
             $opts[CURLOPT_CUSTOMREQUEST] = 'PUT';
@@ -138,7 +139,7 @@ class APIRequest {
 
         curl_close($curl);
 
-        return Array($response_body, $response_code);
+        return [$response_body, $response_code];
     }
 
     /**
