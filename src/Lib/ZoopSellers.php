@@ -28,11 +28,35 @@ class ZoopSellers {
         return $this->APIResource->createAPI($api, $post);
     }
 
-    public function createBusiness($post) {
+    /**
+     * @param integer $id
+     * @param array $post
+     * @return mixed
+     */
+    public function updateIndividuals($id, $post = []) {
+        $api = 'sellers/individuals/' . $id;
+        return $this->APIResource->updateAPI($api, $post);
+    }
+    
+    /**
+     * @param array $post
+     * @return mixed
+     */
+    public function createBusiness($post = []) {
         $api = 'sellers/businesses';
         return $this->APIResource->createAPI($api, $post);
     }
 
+    /**
+     * @param integer $id
+     * @param array $post
+     * @return mixed
+     */
+    public function updateBusiness($id, $post = []) {
+        $api = 'sellers/businesses/' . $id;
+        return $this->APIResource->updateAPI($api, $post);
+    }
+    
     /**
      * @param string $sellerID
      * @return mixed
@@ -60,6 +84,14 @@ class ZoopSellers {
     }
 
     /**
+     * @return mixed
+     */
+    public function getSearch($post = []) {
+        $api = 'sellers/search';
+        return $this->APIResource->searchAPI($api, $post);
+    }
+
+    /**
      * @param $sellerID string
      * @param $files array
      *
@@ -71,23 +103,33 @@ class ZoopSellers {
     }
 
     /**
-     * @param $docID string
-     *
-     * @return mixed
-     */
-    public function getDoc($docID) {
-        $api = 'documents/' . $docID;
-        return $this->APIResource->searchAPI($api);
-    }
-
-    /**
      * @param $sellerID string
+     * @param $files array
      *
      * @return mixed
      */
-    public function getAllDocs($sellerID) {
+    public function getDocs($sellerID) {
         $api = 'sellers/' . $sellerID . '/documents';
         return $this->APIResource->searchAPI($api);
     }
+    
+    /**
+     * @param $id integer
+     * @param $files array
+     *
+     * @return mixed
+     */
+    public function updateDocs($id, $files) {
+        $api = 'sellers/documents/' . $id;
+        return $this->APIResource->fileUpdateAPI($api, $files);
+    }
 
+    /**
+     * @return mixed
+     */
+    public function getCategoryCodes() {
+        $api = 'merchant_category_codes';
+        return $this->APIResource->searchAPI($api);
+    }
+    
 }
