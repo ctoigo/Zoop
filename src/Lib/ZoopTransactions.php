@@ -21,6 +21,15 @@ class ZoopTransactions {
     }
 
     /**
+     * @param string $transactionsID
+     * @return mixed
+     */
+    public function get($transactionsID) {
+        $api = 'transactions/' . $transactionsID;
+        return $this->APIResource->searchAPI($api);
+    }
+    
+    /**
      * @param array $post
      * @return mixed
      */
