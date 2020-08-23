@@ -87,8 +87,8 @@ class ZoopSellers {
      * @return mixed
      */
     public function getSearch($post = []) {
-        $api = 'sellers/search';
-        return $this->APIResource->searchAPI($api, $post);
+        $api = 'sellers/search?' . http_build_query($post);
+        return $this->APIResource->searchAPI($api);
     }
 
     /**
